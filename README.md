@@ -1,5 +1,7 @@
 # Primeiro tutorial do canal quero ser dev
 
+Link da aplicação em produção: testing-react-quero-ser-dev.netlify.app
+
 Neste projeto estamos estudando como dar os passos iniciais com react-testing-library.
 
 Esta aplicação simples feita com create react-app deverá ter o comportamento abaixo:

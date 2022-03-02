@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# Primeiro tutorial do canal quero ser dev
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Neste projeto estamos estudando como dar os passos iniciais com react-testing-library.
 
-## Available Scripts
+Esta aplicação simples feita com create react-app deverá ter o comportamento abaixo:
 
-In the project directory, you can run:
+![image](https://media.giphy.com/media/KMyt74nbfFpnTEIgLU/giphy.gif)
 
-### `yarn start`
+O mais legal é que vamos fazer com testes garantindo os cenários abaixo:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+✅ Quando a tela carrega, o componente renderiza corretamente com todos os elementos?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ A imagem está acessível com o texto alternativo?
 
-### `yarn test`
+✅ O input funciona capturando o valor digitado?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Após a usuária digitar o nome, o texto renderiza corretamente na tela?
+## Conteúdo
 
-### `yarn build`
+Vamos aprender a testar em react? Na prática a gente vai imitar comportamento humano interagindo com a aplicação só que de forma automatizada. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sim, você vai poder dizer que começou a estudar testes unitários e automatizados com React Testing Library, que segundo a documentação é uma família completa de pacotes para criar testes utilizando boas práticas centradas no comportamento da pessoa usuária.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Vamos lá!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Estrutura básica do teste
 
-### `yarn eject`
+> Bloco de teste
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Renderizar o componente que queremos testar
+* Encontrar os elementos que queremos interagir
+* Interagir com esses elementos
+* Afirmar o resultado esperado
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> describe, it e expect
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* describe serve para criarmos um conjunto de testes
+* it ou test serve para criar um caso de teste
+* expect serve para descrever o que esperamos com resultado ideal para aquele teste
 
-## Learn More
+> screen, render, fireEvent, queryBy.../findBy..., toBeInTheDocument/toHaveTextContent 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* screen é o que nos permite visualizar a tela e a partir daí encontrar os nós do DOM
+* render é o metodo que renderiza nosso componente no ambiente de testes
+* fireEvent simula alguns eventos e interações da pessoa usuária
+* queryBy.../findBy... são as queries, alguns dos muitos metódos que nos ajuda a encontrar, buscar, trazer um ou mais elementos da tela 
+* toBeInTheDocument/toHaveTextContent são os matchers, alguns dos muitos metodos que nos ajudam a comparar o resultado esperado com o resultado recebido. Eles nos ajudam também com o log de mensagens de erro. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Tecnologias
 
-### Code Splitting
+| Ferramenta | Descrição |
+| --- | --- |
+| `ReactJS` | Biblioteca de javascript |
+| `React-Testing-library` | Bibliotecas para criação de testes em javascript|
+| `yarn` | Gerenciador de pacotes|
+|`Netlify` | Servidor para deploy automático da aplicação via github|
+  
+### Arquitetura
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 📂public
+>  Está o index.html nosso arquivo que recebe a div root manipulada pela virtualDOM
+#### 📂src
+> Estão os arquivos de imagem, css, testes e componentes
+#### 📂node_modules
+> Ficam salvos somente em nosso computador todos os pacotes e dependências para nosso projeto react funcionar
 
-### Analyzing the Bundle Size
+```
+ 📁 Testing
+   |
+   |  - 📁 src
+   |       |- 📄 App.js
+   |       |- 📄 index.js
+   |       |- 📄 App.test.js
+   |       |- 📄 ilustracao.svg
+   |       |- 📄 App.css
+   |       |- 📄 index.css
+   |       |- 📄 setupTests.js
+   |
+   |  - 📁 public
+   |       |- 📄 index.html
+   |
+   |- 📄 README.md
+   |- 📄 .gitignore
+   |- 📄 package.json
+   |- 📄 yarn.lock
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+### Como rodar o projeto localmente
+Siga os passos e inclua as informações abaixo:
 
-### Making a Progressive Web App
+| Passo | Comando/informação       |
+| --------- | ----------- |
+| Faça o fork  | `botão de forkar` |
+| Faça o clone  | `git clone` |
+| Instale as dependências   | `yarn` |
+| Rode os testes     | `yarn test` |
+| Rode o projeto no localhost   | `yarn start` |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### 😎 Próximos passos para estudar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- TDD (Programação orientada a testes)
+- Documentação do React Testing Library
+- Testar projetos que envolvam consumo de API 
+- Melhores práticas e pensamento crítico para criação de testes 
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+_Foi incrível compartilhar essa jornada com você! Qualquer dúvida ou sugestão, chama no contatinho!_
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Saudações, Simara!
+
+ <img src="https://media.giphy.com/media/efhcZv18NpQDyRsaYa/giphy.gif" alt="Gif Yeah" width="200">
+
+Professora na {reprograma}, desenvolvedora na ThoughtWorks e criadora do Canal e Podcast Quero Ser Dev.
+
+Vamos nos conectar!
+
+- [instagram](https://www.instagram.com/simara_conceicao)
+- [linkedin](https://www.linkedin.com/in/simaraconceicao/)
+- [github](https://github.com/simaraconceicao)
+- [spotify](https://open.spotify.com/show/59vCz4TY6tPHXW26qJknh3)
+- [quero ser dev](https://queroserdev.com)
+
+<br>
+Feito com 💜 por Simara Conceição

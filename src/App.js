@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import ilustraImg from './ilustracao.svg'
+import './App.css'
 
-function App() {
+export default function App() {
+  const [name, setName] = useState()
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <img 
+        src={ilustraImg} 
+        alt="ilustração de uma mulher negra usando o computador e segurando uma xícara" 
+       />
+       <div className="container">
+        <input 
+          className="input-container input-name"
+          type="text" 
+          placeholder="digite seu nome" 
+          onChange={(e) => setName(e.target.value)}
+        />
+        <h1>Hello, <span>{name}</span></h1>
+       </div>
     </div>
-  );
+  )
 }
-
-export default App;

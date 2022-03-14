@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ilustraImg from './ilustracao.svg'
 import './App.css'
+import ilustraImg from './ilustracao.svg'
 
 export default function App() {
   const [name, setName] = useState()
